@@ -1,0 +1,32 @@
+{
+  "name": "wp-launchpad",
+  "version": "0.0.4",
+  "description": "Launchpad for your professional WordPress development workflow ",
+  "main": "Gruntfile.js",
+  "dependencies": {
+    "grunt": "^0.4.5"
+  },
+  "devDependencies": {
+    "grunt-contrib-copy": "^0.5.0",
+    "grunt-php": "^1.1.1"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:micahblu/wp-launchpad.git"
+  },
+  "keywords": [
+    "Wordpress",
+    "Development",
+    "launchpad",
+    "workflow"
+  ],
+  "author": "micahblu",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/micahblu/wp-launchpad/issues"
+  },
+  "homepage": "https://github.com/micahblu/wp-launchpad"
+}
