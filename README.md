@@ -25,12 +25,12 @@ Furthermore, we have GIT and Continous Integration in mind, so whoever in the te
 
 ## Getting started
 
-__1. In terminal, go to the project folder and type:__
+__1. In terminal, go to the project folder and type (as root, or using sudo):__
 
 ```bash
-composer install
-npm install
-grunt
+# composer install
+# npm install
+# grunt
 ```
 
 __2. Configure wp-config file:__

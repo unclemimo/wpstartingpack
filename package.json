@@ -1,7 +1,7 @@
 {
-  "name": "wp-launchpad",
-  "version": "0.0.4",
-  "description": "Launchpad for your professional WordPress development workflow ",
+  "name": "wpwpstartingpack",
+  "version": "0.0.1",
+  "description": "WP Starting Pack for a modern WordPress development workflow ",
   "main": "Gruntfile.js",
   "dependencies": {
     "grunt": "^0.4.5"
@@ -15,18 +15,20 @@
   },
   "repository": {
     "type": "git",
-    "url": "git@github.com:micahblu/wp-launchpad.git"
+    "url": "git@github.com:unclemimo/wpstartingpack.git"
   },
   "keywords": [
     "Wordpress",
     "Development",
-    "launchpad",
+    "wp starting pack",
+    "modern",
+    "git",
     "workflow"
   ],
-  "author": "micahblu",
+  "author": "unclemimo",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/micahblu/wp-launchpad/issues"
+    "url": "https://github.com/unclemimo/wpstartingpack/issues"
   },
-  "homepage": "https://github.com/micahblu/wp-launchpad"
+  "homepage": "https://github.com/unclemimo/wpstartingpack"
 }

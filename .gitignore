@@ -6,3 +6,4 @@ index.php
 wp-config-sample.php
 wp-config.php
 composer.lock
+wp-config/
