@@ -3,7 +3,5 @@ vendor/
 wp-content/
 wp/
 index.php
-wp-config-sample.php
-wp-config.php
 composer.lock
-wp-config/
+.htaccess
