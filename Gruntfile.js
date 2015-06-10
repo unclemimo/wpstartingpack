@@ -32,6 +32,12 @@ module.exports = function(grunt){
 				cwd: './resources/wpconfigfiles/',
 				src: ['wp-config/**'],
 				dest: './'
+			},
+			wp_theme_general: {
+				expand: true,
+				cwd: './resources/themes/',
+				src: ['general/**'],
+				dest: './wp-content/themes/'
 			}
 		},
 
@@ -44,15 +50,15 @@ module.exports = function(grunt){
 	
   	//grunt.loadNpmTasks('grunt-php');
 
-	grunt.registerTask('default', ['copy:index', 'copy:wp_content', 'copy:wp_config_file', 'copy:wp_config_folder', 'update_wp_paths']);
+	grunt.registerTask('default', ['copy:index', 'copy:wp_content', 'copy:wp_config_file', 'copy:wp_config_folder', 'delete_files']);
 
-	grunt.registerTask('update_wp_paths', function(){
+	grunt.registerTask('delete_files', function(){
 
 		// remove wp/wp-config-sample.php so wordpress finds the correct one in the absolute root directory.
 		grunt.file.delete('./wp/wp-config-sample.php');
 
 		grunt.file.delete('./wp/wp-content/');
 
-		grunt.file.delete('./resources/wpconfigfiles/');
+		grunt.file.delete('./resources/');
 	});
 }
