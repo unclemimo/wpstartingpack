@@ -35,9 +35,9 @@ module.exports = function(grunt){
 			},
 			wp_theme_general: {
 				expand: true,
-				cwd: './resources/themes/',
+				cwd: 'resources/themes/',
 				src: ['general/**'],
-				dest: './wp-content/themes/'
+				dest: 'wp-content/themes/'
 			}
 		},
 
@@ -50,7 +50,7 @@ module.exports = function(grunt){
 	
   	//grunt.loadNpmTasks('grunt-php');
 
-	grunt.registerTask('default', ['copy:index', 'copy:wp_content', 'copy:wp_config_file', 'copy:wp_config_folder', 'delete_files']);
+	grunt.registerTask('default', ['copy:index', 'copy:wp_content', 'copy:wp_config_file', 'copy:wp_config_folder', 'copy:wp_theme_general', 'delete_files']);
 
 	grunt.registerTask('delete_files', function(){
 
