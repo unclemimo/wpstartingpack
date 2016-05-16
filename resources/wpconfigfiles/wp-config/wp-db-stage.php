@@ -2,6 +2,7 @@
 // Prevent file from being accessed directly
 if (!defined('ABSPATH')) exit();
 
+
 define('DB_NAME',     'XXXX');
 define('DB_USER',     'XXXX');
 define('DB_PASSWORD', 'XXXX');
@@ -9,15 +10,17 @@ define('DB_HOST',     'localhost');
 define('DB_CHARSET',  'utf8');
 define('DB_COLLATE',  '');
 
-/** Local WP config variables  */
-define('WP_SITEURL','http://localhost/XXXX');
-define('WP_HOME','http://localhost/XXXX');
+/** Stage server WP config variables  */
+
+define('WP_SITEURL','http://XXXX.net/stage/XXXX');
+define('WP_HOME','http://XXXX.net/stage/XXXX');
+define('RELOCATE',true);
+
 
 // IMPORTANT!
 	// Don't use this values! Generate random keys in https://api.wordpress.org/secret-key/1.1/salt/
 	// and replace it.
 	// Use the same in all the enviroments
-define('RELOCATE',true);
 
 define('AUTH_KEY',         'q-.$D*ymmXxuIYDq ql9-IN6cmgrl-e!8)UB^;x?KMkC-y*]-?J+UKkHIo/TM-u<');
 define('SECURE_AUTH_KEY',  'dAwh7n1k%K!3zhJoL!_-c/mA<2r?}ucH<Kz=6(:#V%o iI*-I2Gyy3j`Cp#>? y4');
