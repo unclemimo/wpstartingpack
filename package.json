@@ -1,14 +1,14 @@
 {
   "name": "wpwpstartingpack",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "WP Starting Pack for a modern WordPress development workflow ",
   "main": "Gruntfile.js",
   "dependencies": {
     "grunt": "^0.4.5"
   },
   "devDependencies": {
-    "grunt-contrib-copy": "^0.5.0",
-    "grunt-php": "^1.1.1"
+    "grunt-contrib-copy": "latest",
+    "grunt-php": "latest"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -25,7 +25,7 @@
     "git",
     "workflow"
   ],
-  "author": "unclemimo",
+  "author": "Atiasweb.com",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/unclemimo/wpstartingpack/issues"
