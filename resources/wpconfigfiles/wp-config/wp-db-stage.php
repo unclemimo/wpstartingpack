@@ -10,11 +10,11 @@ define('DB_HOST',     'localhost');
 define('DB_CHARSET',  'utf8');
 define('DB_COLLATE',  '');
 
-/** Stage server WP config variables  */
+/** Stage server WP config variables  
 
 define('WP_SITEURL','http://XXXX.net/stage/XXXX');
-define('WP_HOME','http://XXXX.net/stage/XXXX');
-define('RELOCATE',true);
+define('WP_HOME','http://XXXX.net/stage/XXXX/wp');
+define('RELOCATE',true);*/
 
 
 // IMPORTANT!

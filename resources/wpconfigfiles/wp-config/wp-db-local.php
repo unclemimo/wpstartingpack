@@ -9,9 +9,9 @@ define('DB_HOST',     'localhost');
 define('DB_CHARSET',  'utf8');
 define('DB_COLLATE',  '');
 
-/** Local WP config variables  */
+/** Local WP config variables  
 define('WP_SITEURL','http://localhost/XXXX');
-define('WP_HOME','http://localhost/XXXX');
+define('WP_HOME','http://localhost/XXXX/wp');*/
 
 // IMPORTANT!
 	// Don't use this values! Generate random keys in https://api.wordpress.org/secret-key/1.1/salt/

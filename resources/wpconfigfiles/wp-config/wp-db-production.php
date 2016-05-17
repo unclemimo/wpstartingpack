@@ -4,16 +4,22 @@ if (!defined('ABSPATH')) exit();
 
 // STAGE: http://atiasweb.net/stage/jd-es y http://atiasweb.net/stage-clientes/jd-es
 
-define('DB_NAME',     'lidecopa_wrdp1');
-define('DB_USER',     'lidecopa_wrdp1');
-define('DB_PASSWORD', '2yE2qc5DZbWFAe');
+define('DB_NAME',     'XXXX');
+define('DB_USER',     'XXXX');
+define('DB_PASSWORD', 'XXXX');
 define('DB_HOST',     'localhost');
 define('DB_CHARSET',  'utf8');
 define('DB_COLLATE',  '');
 
-define('WP_SITEURL','http://fundacionlidecopa.com');
-define('WP_HOME','http://fundacionlidecopa.com');
-define('RELOCATE',true);
+/*
+define('WP_SITEURL','http://XXXX.com');
+define('WP_HOME','http://XXXX.com/wp');
+define('RELOCATE',true); */
+
+// IMPORTANT!
+	// Don't use this values! Generate random keys in https://api.wordpress.org/secret-key/1.1/salt/
+	// and replace it.
+	// Use the same in all the enviroments
 
 define('AUTH_KEY',         'q-.$D*ymmXxuIYDq ql9-IN6cmgrl-e!8)UB^;x?KMkC-y*]-?J+UKkHIo/TM-u<');
 define('SECURE_AUTH_KEY',  'dAwh7n1k%K!3zhJoL!_-c/mA<2r?}ucH<Kz=6(:#V%o iI*-I2Gyy3j`Cp#>? y4');
