@@ -13,11 +13,11 @@
 # DB NAME (you want to create), DB USER, DB PASS, SITE URL, WP USER, WP PASS, WP EMAIL, 
 
 CORE_DIR=wp
-DB_NAME=wptest13
+DB_NAME=wptest17
 DB_USER=root
 DB_PASS=root
 
-SITE_URL=http://localhost/wptest 
+SITE_URL=http://localhost/wpstartingpack 
 SITE_TITLE='Unclemimo WPStartingpack'
 SITE_USER=admin
 SITE_PASS=admin
@@ -27,6 +27,10 @@ SITE_EMAIL=daam37@gmail.com
 wp core config --dbname=$DB_NAME --dbuser=$DB_USER --dbpass=$DB_PASS --path=$CORE_DIR --extra-php --allow-root <<PHP
 define( 'WP_DEBUG', true );
 define( 'WP_DEBUG_LOG', true );
+define( 'WP_CONTENT_DIR', dirname(__FILE__) . '/wp-content' );
+define( 'WP_CONTENT_URL', '$SITE_URL/wp-content' );
+define( 'WP_PLUGIN_DIR', dirname(__FILE__) . '/wp-content/plugins' );
+define( 'WP_PLUGIN_URL', '$SITE_URL/wp-content/plugins' );
 PHP
 
 # create the dabase
@@ -43,6 +47,10 @@ sed -ie "s/'\/wp-blog-header.php/'\/wp\/wp-blog-header.php/g" index.php
 rm index.phpe
 # Update the siteurl in the database with sub directory path
 wp option update siteurl $(wp option get siteurl)/$CORE_DIR --path=wp
+
+# Move wp/wp-content to ./wp-content
+cp "$CORE_DIR/wp-content" ./wp-content
+rm -rf "$CORE_DIR/wp-content"
 
 # Uncomment the below line if you want the config in root
 cp "$CORE_DIR/wp-config.php" ./wp-config.php
