@@ -15,10 +15,10 @@ module.exports = function(grunt){
 			        }	
 			    }
 			},
-			wp_plugins: {
-				cwd: './wp-content/plugins',  // set working folder / root to copy
+			wp_new_themes: {
+				cwd: 'wp/wp-content/themes',  // set working folder / root to copy
 			    src: '**/*',           // copy all files and subfolders
-			    dest: 'wp/wp-content/plugins',    // destination folder
+			    dest: './wp-content/plugins',    // destination folder
 			    expand: true           // required when using cwd
 			},
 			wp_config_file: {
@@ -32,12 +32,6 @@ module.exports = function(grunt){
 				src: ['wp-config/**'],
 				dest: './'
 			}
-			/* wp_theme_general: {
-				expand: true,
-				cwd: 'resources/themes/',
-				src: ['general/**'],
-				dest: 'wp-content/themes/'
-			}*/
 		},
 
 
@@ -49,7 +43,7 @@ module.exports = function(grunt){
 	
   	//grunt.loadNpmTasks('grunt-php');
 
-	grunt.registerTask('default', ['copy:index', 'copy:wp_plugins', 'copy:wp_config_file', 'copy:wp_config_folder', 'delete_files']);
+	grunt.registerTask('default', ['copy:index', 'copy:wp_new_themes', 'copy:wp_config_file', 'copy:wp_config_folder', 'delete_files']);
 
 	grunt.registerTask('delete_files', function(){
 

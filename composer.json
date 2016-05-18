@@ -1,43 +1,24 @@
 {
-	"repositories": 
-	[
-		{
-			"type": "composer",
-			"url": "https://wpackagist.org"
-		},
-		{
-			"type": "package",
-			"package": {
-				"name": "wordpress",
-				"type": "webroot",
-				"version": "4.5.2",
-				"dist": {
-					"type": "zip",
-					"url": "https://github.com/WordPress/WordPress/archive/4.5.2.zip"
-				},
-				"require": {
-					"fancyguy/webroot-installer": "1.0.0"
-				}
-			}
-		}
-	],
-
-	"require": {
-		"php": ">=5.3.0",
-		"composer/installers":"1.0.21",
-		"xrstf/composer-php52":"1.0.20",
-		"wordpress": "4.5.2",
-		"fancyguy/webroot-installer": "1.0.0",
-		"wp-sync-db/wp-sync-db":"dev-master",
-		"updraftplus/updraftplus":"dev-master",
-		"yoast/license-manager":"1.2",
-		"yoast/i18n-module":"1.0",
-		"yoast/wordpress-seo":"dev-master",
-		"global-admin-bar-hide-or-remove/global-admin-bar-hide-or-remove":"dev-master"
-	},
-
-	"extra": {
-		"webroot-dir": "wp",
-		"webroot-package": "wordpress"
-	}
+    "name": "unclemimo/wp-composer-startingpack",
+    "description": "Installing WordPress in a subdirectory with Composer (unclemimo method).",
+    "repositories": [
+        {
+            "type": "composer",
+            "url": "https://wpackagist.org"
+        }
+    ],
+    "require": {
+        "php": ">=5.4",
+        "composer/installers": "*",
+        "johnpbloch/wordpress": "*",
+        "wp-sync-db/wp-sync-db":"dev-master"
+    },
+    "extra": {
+        "wordpress-install-dir": "wp",
+        "installer-paths": {
+            "wp-content/mu-plugins/{$name}/": ["type:wordpress-muplugin"],
+            "wp-content/plugins/{$name}/": ["type:wordpress-plugin"],
+            "wp-content/themes/{$name}/": ["type:wordpress-theme"]
+        }
+    }
 }
