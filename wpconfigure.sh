@@ -89,8 +89,8 @@ rm index.phpe
 wp option update siteurl $(wp option get siteurl)/$CORE_DIR --path=wp
 
 # Move wp/wp-content to ./wp-content
-shopt -s dotglob
-mv "$CORE_DIR/wp-content"/* /wp-content
+
+mv  -v $CORE_DIR/wp-content/* /wp-content/
 
 # Uncomment the below line if you want the config in root
 mv "$CORE_DIR/wp-config.php" ./wp-config.php
