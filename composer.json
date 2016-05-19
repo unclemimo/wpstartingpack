@@ -33,8 +33,15 @@
             "wp-content/themes/{$name}/": ["type:wordpress-theme"]
         }
     },
+
     "scripts": {
-    	"post-install-cmd": "./wpconfigure.sh",
-        "post-update-cmd": "mkdir POSTINSTALL"
+        "post-install-cmd": [
+            "chmod +x wpconfigure.sh",
+            "bash wpconfigure.sh"
+        ],
+        "post-update-cmd": [
+            "mkdir POSTUPDATE"
+        ]
     }
+
 }

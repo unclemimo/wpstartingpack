@@ -12,16 +12,56 @@
 #Ask:
 # DB NAME (you want to create), DB USER, DB PASS, SITE URL, WP USER, WP PASS, WP EMAIL, 
 
-CORE_DIR=wp
-DB_NAME=wptest20
-DB_USER=root
-DB_PASS=root
+#CORE_DIR=wp
+#DB_NAME=wptest21
+#DB_USER=root
+#DB_PASS=root
 
-SITE_URL=http://localhost/wpstartingpack 
-SITE_TITLE='Unclemimo WPStartingpack'
-SITE_USER=admin
-SITE_PASS=admin
-SITE_EMAIL=daam37@gmail.com
+#SITE_URL=http://localhost/wpstartingpack 
+#SITE_TITLE='Unclemimo WPStartingpack'
+#SITE_USER=admin
+#SITE_PASS=admin
+#SITE_EMAIL=daam37@gmail.com
+
+
+read -p "Enter your desired wordpress core subdirectory (default: wp): " CORE_DIR
+CORE_DIR=${CORE_DIR:-wp}
+echo $CORE_DIR
+
+read -p "Enter DB name (default: default): " DB_NAME
+DB_NAME=${DB_NAME:-default}
+echo $DB_NAME
+
+read -p "Enter DB user (default: root): " DB_USER
+DB_USER=${DB_USER:-root}
+echo $DB_USER
+
+read -p "Enter DB pass (default: root): " DB_PASS
+DB_PASS=${DB_PASS:-root}
+echo $DB_PASS
+
+read -p "Enter WP SITE URL (default: http://localhost/yoursite): " SITE_URL
+SITE_URL=${SITE_URL:-"http://localhost/yoursite"}
+echo $SITE_URL
+
+read -p "Enter WP SITE TITLE (default: Unclemimo WPStartingpack): " SITE_TITLE
+SITE_TITLE=${SITE_TITLE:-Unclemimo WPStartingpack}
+echo $SITE_TITLE
+
+read -p "Enter WP site user (default: admin): " SITE_USER
+SITE_USER=${SITE_USER:-admin}
+echo $SITE_USER
+
+read -p "Enter WP site password (default: admin): " SITE_PASS
+SITE_PASS=${SITE_PASS:-admin}
+echo $SITE_PASS
+
+read -p "Enter WP site email (default: you@domain.com): " SITE_EMAIL
+SITE_EMAIL=${SITE_EMAIL:-"you@domain.com"}
+echo $SITE_EMAIL
+
+
+
 
 # create the wp-config.php file
 wp core config --dbname=$DB_NAME --dbuser=$DB_USER --dbpass=$DB_PASS --path=$CORE_DIR --extra-php --allow-root <<PHP
