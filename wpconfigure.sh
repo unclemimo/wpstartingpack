@@ -1,6 +1,8 @@
 #!/bin/bash
 # Source: https://deliciousbrains.com/how-why-install-wordpress-core-subdirectory/
 
+# Composer script to run: composer config extra.wordpress-install-dir --unset | composer config extra.wordpress-install-dir WPVALUE
+
 # Installation:
   
 # Install the script in one of the folders in your PATH. Make sure it has execute permissions (i.e. chmod +x wp-install-core-sub-dir).
