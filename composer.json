@@ -1,6 +1,18 @@
 {
     "name": "unclemimo/wp-composer-startingpack",
     "description": "Installing WordPress in a subdirectory with Composer (unclemimo method).",
+    "version": "1.0",
+    "keywords": ["wpstartingpack","wordpress","deployment"],
+    "homepage": "http://atiasweb.com",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "David Atias",
+            "email": "david@atias.com.ve",
+            "homepage": "http://www.atiasweb.com",
+            "role": "Director"
+        }
+    ],
     "repositories": [
         {
             "type": "composer",
@@ -10,7 +22,7 @@
     "require": {
         "php": ">=5.4",
         "composer/installers": "*",
-        "johnpbloch/wordpress": "*",
+        "johnpbloch/wordpress": "4.2.*",
         "wp-sync-db/wp-sync-db":"dev-master"
     },
     "extra": {
@@ -20,5 +32,9 @@
             "wp-content/plugins/{$name}/": ["type:wordpress-plugin"],
             "wp-content/themes/{$name}/": ["type:wordpress-theme"]
         }
+    },
+    "scripts": {
+    	"post-install-cmd": "./wpconfigure.sh",
+        "post-update-cmd": "mkdir POSTINSTALL"
     }
 }

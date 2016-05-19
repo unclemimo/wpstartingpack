@@ -13,7 +13,7 @@
 # DB NAME (you want to create), DB USER, DB PASS, SITE URL, WP USER, WP PASS, WP EMAIL, 
 
 CORE_DIR=wp
-DB_NAME=wptest17
+DB_NAME=wptest20
 DB_USER=root
 DB_PASS=root
 
@@ -49,11 +49,10 @@ rm index.phpe
 wp option update siteurl $(wp option get siteurl)/$CORE_DIR --path=wp
 
 # Move wp/wp-content to ./wp-content
-cp "$CORE_DIR/wp-content" ./wp-content
-rm -rf "$CORE_DIR/wp-content"
+shopt -s dotglob
+mv "$CORE_DIR/wp-content"/* /wp-content
 
 # Uncomment the below line if you want the config in root
-cp "$CORE_DIR/wp-config.php" ./wp-config.php
-rm -rf "$CORE_DIR/wp-config.php"
+mv "$CORE_DIR/wp-config.php" ./wp-config.php
 
 echo 'Install finished!'
