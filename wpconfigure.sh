@@ -2,7 +2,7 @@
 # Source: https://deliciousbrains.com/how-why-install-wordpress-core-subdirectory/
 
 # Composer script to run: composer config extra.wordpress-install-dir --unset ; composer config extra.wordpress-install-dir wordpressfolderpost ; composer install ; chmod +x wpconfigure.sh ; ./wpconfigure.sh
-# WP_SUBDIR=wordpressfold; composer config extra.wordpress-install-dir --unset ; composer config extra.wordpress-install-dir $WP_SUBDIR ; composer config extra.installer-paths.$WP_SUBDIR/wp-content/mu-plugins/{$name}/ ["type:wordpress-muplugin"]; composer config extra.installer-paths.$WP_SUBDIR/wp-content/plugins/{$name}/ ["type:wordpress-plugin"]; composer config extra.installer-paths.$WP_SUBDIR/wp-content/themes/{$name}/ ["type:wordpress-theme"]  ;composer install ; chmod +x wpconfigure.sh ; ./wpconfigure.sh
+# WP_SUBDIR=wordpressfold; composer config extra --unset;composer config extra.installer-paths.wp/wp-content/mu-plugins/{$name}/ --unset;composer config extra.installer-paths.wp/wp-content/plugins/{$name}/ --unset;composer config extra.installer-paths.wp/wp-content/themes/{$name}/ --unset ;composer config extra.wordpress-install-dir $WP_SUBDIR ;composer config extra.installer-paths.$WP_SUBDIR/wp-content/mu-plugins/{$name}/ ["type:wordpress-muplugin"];composer config extra.installer-paths.$WP_SUBDIR/wp-content/plugins/{$name}/ ["type:wordpress-plugin"];composer config extra.installer-paths.$WP_SUBDIR/wp-content/themes/{$name}/ ["type:wordpress-theme"];composer install;chmod +x wpconfigure.sh;./wpconfigure.sh
 
 
 # Installation:
