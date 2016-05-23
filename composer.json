@@ -23,21 +23,14 @@
         "php": ">=5.4",
         "composer/installers": "*",
         "johnpbloch/wordpress": "4.2.*",
-        "wp-sync-db/wp-sync-db":"dev-master",
-        "johnpbloch/wordpress-core-installer": "*"
+        "wp-sync-db/wp-sync-db":"dev-master"
     },
-    "extra": 
-    [
-    	{
-	        "installer-paths": {
-	            "wp/wp-content/mu-plugins/{}/": "[type:wordpress-muplugin]",
-	            "wp/wp-content/plugins/{}/": "[type:wordpress-plugin]",
-	            "wp/wp-content/themes/{}/": "[type:wordpress-theme]"
-	        }
-    	},
-    	{
-        "wordpress-install-dir": "wp"
+    "extra": {
+    	"wordpress-install-dir": "wordpressfold",
+        "installer-paths": {
+        "wordpressfold/wp-content/plugins/{$name}/": ["type:wordpress-plugin"],
+        "wordpressfold/wp-content/mu-plugins/{$name}/": ["type:wordpress-muplugin"],
+        "wordpressfold/wp-content/themes/{$name}/": ["type:wordpress-theme"]
     	}
-    ]
-
+    }
 }

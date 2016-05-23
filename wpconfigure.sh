@@ -31,44 +31,57 @@
 #SITE_PASS=admin
 #SITE_EMAIL=daam37@gmail.com
 
+RESET="\033[0m"
+BOLD="\033[1m"
+YELLOW="\033[38;5;11m"
 
-read -p "Enter your desired wordpress core subdirectory (default: wp. Must be the same of the one selected in Composer as WP Subdirectory): " CORE_DIR
+
+read -p "$(echo -e $BOLD$YELLOW"Enter your desired wordpress core subdirectory (default: wp. Must be the same of the one selected in Composer as WP Subdirectory): "$RESET)" CORE_DIR
 CORE_DIR=${CORE_DIR:-wp}
 echo "WP subdirectory: $CORE_DIR"
 
-read -p "Enter your desired wordpress content folder name (default: wp-content): " WP_CONTENT_VAR
+
+read -p "$(echo -e $BOLD$YELLOW"Enter your desired wordpress content folder name (default: wp-content): "$RESET)" WP_CONTENT_VAR
 WP_CONTENT_VAR=${WP_CONTENT_VAR:-wp-content}
 echo "WP content folder name: $WP_CONTENT_VAR"
 
-read -p "Enter DB name (default: default): " DB_NAME
+
+read -p "$(echo -e $BOLD$YELLOW"Enter DB name (default: default): "$RESET)" DB_NAME
 DB_NAME=${DB_NAME:-default}
 echo "DB name: $DB_NAME"
 
-read -p "Enter DB user (default: root): " DB_USER
+
+read -p "$(echo -e $BOLD$YELLOW"Enter DB user (default: root): "$RESET)" DB_USER
 DB_USER=${DB_USER:-root}
 echo "DB user: $DB_USER"
 
-read -p "Enter DB pass (default: root): " DB_PASS
+
+read -p "$(echo -e $BOLD$YELLOW"Enter DB pass (default: root): "$RESET)" DB_PASS
 DB_PASS=${DB_PASS:-root}
 echo "DB pass $DB_PASS"
 
-read -p "Enter WP SITE URL (default: http://localhost/yoursite): " SITE_URL
+
+read -p "$(echo -e $BOLD$YELLOW"Enter WP SITE URL (default: http://localhost/yoursite): "$RESET)" SITE_URL
 SITE_URL=${SITE_URL:-"http://localhost/yoursite"}
 echo "WP Site URL: $SITE_URL"
 
-read -p "Enter WP SITE TITLE (default: Unclemimo WPStartingpack): " SITE_TITLE
+
+read -p "$(echo -e $BOLD$YELLOW"Enter WP SITE TITLE (default: Unclemimo WPStartingpack): "$RESET)" SITE_TITLE
 SITE_TITLE=${SITE_TITLE:-Unclemimo WPStartingpack}
 echo "WP Site Title: $SITE_TITLE"
 
-read -p "Enter WP site user (default: admin): " SITE_USER
+
+read -p "$(echo -e $BOLD$YELLOW"Enter WP site user (default: admin): "$RESET)" SITE_USER
 SITE_USER=${SITE_USER:-admin}
 echo "WP Site user: $SITE_USER"
 
-read -p "Enter WP site password (default: admin): " SITE_PASS
+
+read -p "$(echo -e $BOLD$YELLOW"Enter WP site password (default: admin): "$RESET)" SITE_PASS
 SITE_PASS=${SITE_PASS:-admin}
 echo "WP Site pass: $SITE_PASS"
 
-read -p "Enter WP site email (default: you@domain.com): " SITE_EMAIL
+
+read -p "$(echo -e $BOLD$YELLOW"Enter WP site email (default: you@domain.com): "$RESET)" SITE_EMAIL
 SITE_EMAIL=${SITE_EMAIL:-"you@domain.com"}
 echo "WP Site email: $SITE_EMAIL"
 
@@ -109,4 +122,7 @@ mv /wp-content/ /$WP_CONTENT_VAR/
 # Uncomment the below line if you want the config in root
 mv "$CORE_DIR/wp-config.php" ./wp-config.php
 
-echo 'Installation finished!'
+
+echo -e $BOLD$GREEN"Installation finished!
+
+printf "${GREEN}Installation finished\n"
