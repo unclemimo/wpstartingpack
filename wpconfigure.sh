@@ -34,6 +34,7 @@
 RESET="\033[0m"
 BOLD="\033[1m"
 YELLOW="\033[38;5;11m"
+CURRENT_DIR=${PWD##*/} 
 
 
 read -p "$(echo -e $BOLD$YELLOW"Enter your desired wordpress core subdirectory (default: wp. Must be the same of the one selected in Composer as WP Subdirectory): "$RESET)" CORE_DIR
@@ -61,8 +62,8 @@ DB_PASS=${DB_PASS:-root}
 echo "DB pass $DB_PASS"
 
 
-read -p "$(echo -e $BOLD$YELLOW"Enter WP SITE URL (default: http://localhost/yoursite): "$RESET)" SITE_URL
-SITE_URL=${SITE_URL:-"http://localhost/yoursite"}
+read -p "$(echo -e $BOLD$YELLOW"Enter WP SITE URL (default: http://localhost/$CURRENT_DIR): "$RESET)" SITE_URL
+SITE_URL=${SITE_URL:-"http://localhost/$CURRENT_DIR"}
 echo "WP Site URL: $SITE_URL"
 
 
@@ -121,8 +122,8 @@ fi
 if [ ! -d "$WP_CONTENT_VAR" ]; then
   mkdir $WP_CONTENT_VAR
 fi
-chmod -v 755 $CORE_DIR/WP_CONTENT_VAR/*
-mv  -v $CORE_DIR/WP_CONTENT_VAR/* WP_CONTENT_VAR/
+chmod -v 755 $CORE_DIR/$WP_CONTENT_VAR/*
+mv  -v $CORE_DIR/$WP_CONTENT_VAR/* $WP_CONTENT_VAR/
 
 
 
@@ -130,12 +131,11 @@ mv  -v $CORE_DIR/WP_CONTENT_VAR/* WP_CONTENT_VAR/
 mv "$CORE_DIR/wp-config.php" ./wp-config.php
 
 # Move wp-content in root to wp/wp-content
-if [ ! -d "wp-content-composer" ]; then
-mv wp-content-composer/wp-content/* $WP_CONTENT_VAR/
+if [  -d "wp-content-composer" ]; then
+rsync -a wp-content-composer/wp-content/* $WP_CONTENT_VAR/
 rm -rf wp-content-composer
 fi
 
 
-echo -e $BOLD$GREEN"Installation finished!
 
-printf "${GREEN}Installation finished\n"
+printf "\033[0;32mInstallation finished\n";

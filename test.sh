@@ -1,5 +1,4 @@
-echo "Your first name: "
-read fname
-echo "Your last name:"
-read lname 
-echo "Hello $fname $lname ! I am learning how to create shell scripts."
+if [  -d "wp-content-composer" ]; then
+rsync -av wp-content-composer/wp-content/* wp-content/
+rm -rf wp-content-composer
+fi
