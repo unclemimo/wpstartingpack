@@ -111,16 +111,29 @@ rm index.phpe
 # Update the siteurl in the database with sub directory path
 wp option update siteurl $(wp option get siteurl)/$CORE_DIR --path=wp
 
-# Move wp/wp-content to ./wp-content
-
-chmod -v 755 $CORE_DIR/wp-content/*
-mv  -v $CORE_DIR/wp-content/* /wp-content/
-
 # Rename WP Content folder (if it applies)
-mv /wp-content/ /$WP_CONTENT_VAR/
+if [  -d "wp-content" ]; then
+ mv -v wp-content/ $WP_CONTENT_VAR/
+fi
+
+# Move wp/wp-content to ./$WP_CONTENT_VAR
+
+if [ ! -d "$WP_CONTENT_VAR" ]; then
+  mkdir $WP_CONTENT_VAR
+fi
+chmod -v 755 $CORE_DIR/WP_CONTENT_VAR/*
+mv  -v $CORE_DIR/WP_CONTENT_VAR/* WP_CONTENT_VAR/
+
+
 
 # Uncomment the below line if you want the config in root
 mv "$CORE_DIR/wp-config.php" ./wp-config.php
+
+# Move wp-content in root to wp/wp-content
+if [ ! -d "wp-content-composer" ]; then
+mv wp-content-composer/wp-content/* $WP_CONTENT_VAR/
+rm -rf wp-content-composer
+fi
 
 
 echo -e $BOLD$GREEN"Installation finished!
