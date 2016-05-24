@@ -135,5 +135,14 @@ wp plugin install w3-total-cache --activate
 #wp plugin install disable-comments --activate
 
 
+# Move remaining wp/$WP_CONTENT_VAR to ./$WP_CONTENT_VAR
+
+if [  -d "$WP_CONTENT_VAR" ]; then
+  rsync -av $CORE_DIR/$WP_CONTENT_VAR/* $WP_CONTENT_VAR/
+  rm -rf $CORE_DIR/$WP_CONTENT_VAR/
+fi
+
+
+
 
 printf "\033[0;32mInstallation finished\n";
