@@ -21,7 +21,7 @@ WP_CONTENT_VAR=${WP_CONTENT_VAR:-wp-content}
 echo "WP content folder name: $WP_CONTENT_VAR"
 
 
-read -p "$(echo -e $BOLD$YELLOW"Enter DB name (default: default): "$RESET)" DB_NAME
+read -p "$(echo -e $BOLD$YELLOW"Enter DB name to be created (default: default): "$RESET)" DB_NAME
 DB_NAME=${DB_NAME:-default}
 echo "DB name: $DB_NAME"
 
@@ -102,6 +102,7 @@ mv "$CORE_DIR/wp-config.php" ./wp-config.php
 wp plugin install https://github.com/wp-sync-db/wp-sync-db/archive/master.zip --activate
 wp plugin install w3-total-cache --activate
 #wp plugin install google-sitemap-generator --activate
+#wp plugin install themecheck --activate
 #wp plugin install better-wp-security --activate
 #wp plugin install wordpress-seo --activate
 #wp plugin install shortcodes-ultimate --activate
@@ -125,11 +126,14 @@ wp plugin install w3-total-cache --activate
 #wp plugin install disable-comments --activate
 
 
-# Move remaining wp/$WP_CONTENT_VAR to ./$WP_CONTENT_VAR
+# Verify if there are more files in wp/wp-content and move it to the new folder (./$WP_CONTENT_VAR)
 
 if [  -d "$WP_CONTENT_VAR" ]; then
   rsync -av $CORE_DIR/$WP_CONTENT_VAR/* $WP_CONTENT_VAR/
   rm -rf $CORE_DIR/$WP_CONTENT_VAR/
+
+  rsync -av $CORE_DIR/wp-content/* $WP_CONTENT_VAR/
+  rm -rf $CORE_DIR/wp-content
 fi
 
 
