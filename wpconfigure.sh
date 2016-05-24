@@ -1,10 +1,6 @@
 #!/bin/bash
-# Composer script to run: composer config extra.wordpress-install-dir --unset ; composer config extra.wordpress-install-dir wordpressfolderpost ; composer install ; chmod +x wpconfigure.sh ; ./wpconfigure.sh
-# WP_SUBDIR=wordpressfold; composer config extra --unset;composer config extra.installer-paths.wp/wp-content/mu-plugins/{$name}/ --unset;composer config extra.installer-paths.wp/wp-content/plugins/{$name}/ --unset;composer config extra.installer-paths.wp/wp-content/themes/{$name}/ --unset ;composer config extra.wordpress-install-dir $WP_SUBDIR ;composer config extra.installer-paths.$WP_SUBDIR/wp-content/mu-plugins/{$name}/ ["type:wordpress-muplugin"];composer config extra.installer-paths.$WP_SUBDIR/wp-content/plugins/{$name}/ ["type:wordpress-plugin"];composer config extra.installer-paths.$WP_SUBDIR/wp-content/themes/{$name}/ ["type:wordpress-theme"];composer install;chmod +x wpconfigure.sh;./wpconfigure.sh
-
 
 # Variables:
-
 
 RESET="\033[0m"
 BOLD="\033[1m"
@@ -86,7 +82,7 @@ cp "$CORE_DIR/index.php" ./index.php
 
 # Edit index.php to point to correct path of wp-blog-header.php
 sed -ie "s/'\/wp-blog-header.php/'\/wp\/wp-blog-header.php/g" index.php
-rm index.phpe
+#rm index.phpe
 
 # Update the siteurl in the database with sub directory path
 wp option update siteurl $(wp option get siteurl)/$CORE_DIR --path=wp
@@ -99,18 +95,11 @@ fi
 chmod -v 755 $CORE_DIR/wp-content/*
 rsync -av $CORE_DIR/wp-content/* $WP_CONTENT_VAR/
 
-# Move wp-content-composer in root to ./$WP_CONTENT_VAR
-if [  -d "wp-content-composer" ]; then
-rsync -av wp-content-composer/wp-content/* $WP_CONTENT_VAR/
-rm -rf wp-content-composer
-fi
-
 # Uncomment the below line if you want the config in root
 mv "$CORE_DIR/wp-config.php" ./wp-config.php
 
-
 # Install/activate plugins
-wp plugin activate wp-sync-db
+wp plugin install https://github.com/wp-sync-db/wp-sync-db/archive/master.zip --activate
 wp plugin install w3-total-cache --activate
 #wp plugin install google-sitemap-generator --activate
 #wp plugin install better-wp-security --activate

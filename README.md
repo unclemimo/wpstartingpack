@@ -3,7 +3,7 @@ WP starting pack
 
 This script offer a modern workflow to manage Wordpress installation and setup very seamsly. Through a user prompt in the command line you can:
 
-* Install and manage Wordpress with Composer.
+* Install the latest version of Wordpress with Composer.
 * Setup WP core in a custom directory (site up and running in http://localhost/yoursite).
 * Move wp-config.php from WP core  directory (https://wordpress.stackexchange.com/questions/58391/is-moving-wp-config-outside-the-web-root-really-beneficial).
 * Create DB in your local system (if it doesn't exist).

@@ -22,15 +22,9 @@
     "require": {
         "php": ">=5.4",
         "composer/installers": "*",
-        "johnpbloch/wordpress": "4.2.*",
-        "wp-sync-db/wp-sync-db":"dev-master"
+        "johnpbloch/wordpress": "*",
     },
     "extra": {
     	"wordpress-install-dir": "wp",
-        "installer-paths": {
-        "wp-content-composer/wp-content/plugins/{$name}/": ["type:wordpress-plugin"],
-        "wp-content-composer/wp-content/mu-plugins/{$name}/": ["type:wordpress-muplugin"],
-        "wp-content-composer/wp-content/themes/{$name}/": ["type:wordpress-theme"]
-    	}
     }
 }
