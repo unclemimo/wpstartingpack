@@ -3,7 +3,7 @@ WP starting pack
 
 This script offer a modern workflow to manage Wordpress installation and setup very seamsly. Through a user prompt in the command line you can:
 
-* Install and manage Wordpress with Composer.
+* Install the latest version of Wordpress with Composer.
 * Setup WP core in a custom directory (site up and running in http://localhost/yoursite).
 * Move wp-config.php from WP core  directory (https://wordpress.stackexchange.com/questions/58391/is-moving-wp-config-outside-the-web-root-really-beneficial).
 * Create DB in your local system (if it doesn't exist).
@@ -27,10 +27,11 @@ We want to make of it a maintainable and stable alternative for launching fresh 
 
 Furthermore, we have GIT and Continous Integration in mind, so whoever in the team can build up and recreate the project in any devolopment enviroment.
 
-## Requeriments:
+## System requeriments:
 
 Before getting started, make sure you have installed, up and running:
 
+- PHP 5.3.2+
 - Composer: https://getcomposer.org/.
 - WP CLI: https://wp-cli.org/
 - Node.js: https://nodejs.org/en/
@@ -43,8 +44,8 @@ It has been tested on Mac. I realise that it should work on Linux as well.
 __1. In terminal, go to the project folder and type (as root, or using sudo):__
 
 ```bash
-# composer install
-# wpconfigure.sh
+# WP_SUBDIR=wp; composer install;
+# chmod +x wpconfigure.sh; wpconfigure.sh
 ```
 
 ## References
