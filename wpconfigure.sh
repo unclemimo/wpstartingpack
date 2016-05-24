@@ -82,7 +82,7 @@ cp "$CORE_DIR/index.php" ./index.php
 
 # Edit index.php to point to correct path of wp-blog-header.php
 sed -ie "s/'\/wp-blog-header.php/'\/wp\/wp-blog-header.php/g" index.php
-#rm index.phpe
+rm index.phpe
 
 # Update the siteurl in the database with sub directory path
 wp option update siteurl $(wp option get siteurl)/$CORE_DIR --path=wp
