@@ -8,29 +8,6 @@
 # Installation:
 
 
-
-
-
-# Install the script in one of the folders in your PATH. Make sure it has execute permissions (i.e. chmod +x wp-install-core-sub-dir).
-  
-#Usage:
-
-# This is a simple script as an example, it could be improved by accepting parameters etc.
-
-#Ask:
-# DB NAME (you want to create), DB USER, DB PASS, SITE URL, WP USER, WP PASS, WP EMAIL, 
-
-#CORE_DIR=wp
-#DB_NAME=wptest21
-#DB_USER=root
-#DB_PASS=root
-
-#SITE_URL=http://localhost/wpstartingpack 
-#SITE_TITLE='Unclemimo WPStartingpack'
-#SITE_USER=admin
-#SITE_PASS=admin
-#SITE_EMAIL=daam37@gmail.com
-
 RESET="\033[0m"
 BOLD="\033[1m"
 YELLOW="\033[38;5;11m"
@@ -109,32 +86,53 @@ cp "$CORE_DIR/index.php" ./index.php
 # Edit index.php to point to correct path of wp-blog-header.php
 sed -ie "s/'\/wp-blog-header.php/'\/wp\/wp-blog-header.php/g" index.php
 rm index.phpe
+
 # Update the siteurl in the database with sub directory path
 wp option update siteurl $(wp option get siteurl)/$CORE_DIR --path=wp
-
-# Rename WP Content folder (if it applies)
-if [  -d "wp-content" ]; then
- mv -v wp-content/ $WP_CONTENT_VAR/
-fi
 
 # Move wp/wp-content to ./$WP_CONTENT_VAR
 
 if [ ! -d "$WP_CONTENT_VAR" ]; then
   mkdir $WP_CONTENT_VAR
 fi
-chmod -v 755 $CORE_DIR/$WP_CONTENT_VAR/*
-mv  -v $CORE_DIR/$WP_CONTENT_VAR/* $WP_CONTENT_VAR/
+chmod -v 755 $CORE_DIR/wp-content/*
+rsync -av $CORE_DIR/wp-content/* $WP_CONTENT_VAR/
 
-
+# Move wp-content in root to wp/wp-content
+if [  -d "wp-content-composer" ]; then
+rsync -av wp-content-composer/wp-content/* $WP_CONTENT_VAR/
+rm -rf wp-content-composer
+fi
 
 # Uncomment the below line if you want the config in root
 mv "$CORE_DIR/wp-config.php" ./wp-config.php
 
-# Move wp-content in root to wp/wp-content
-if [  -d "wp-content-composer" ]; then
-rsync -a wp-content-composer/wp-content/* $WP_CONTENT_VAR/
-rm -rf wp-content-composer
-fi
+
+# Install/activate plugins
+wp plugin activate wp-sync-db
+wp plugin install w3-total-cache --activate
+#wp plugin install google-sitemap-generator --activate
+#wp plugin install better-wp-security --activate
+#wp plugin install wordpress-seo --activate
+#wp plugin install shortcodes-ultimate --activate
+#wp plugin install wysija-newsletters --activate
+#wp plugin install contact-form-7 --activate
+#wp plugin install xcloner-backup-and-restore	 --activate
+#wp plugin install google-analytics-for-wordpress --activate
+#wp plugin install updraftplus --activate
+#wp plugin install advanced-custom-fields --activate
+#wp plugin install internet-explorer-alert --activate
+#wp plugin install disable-comments --activate
+#wp plugin install master-slider --activate
+#wp plugin install sweet-alert-add-on-for-contact-form-7 --activate
+#wp plugin install admin-bar-disabler --activate
+#wp plugin install disable-comments --activate
+#wp plugin install majpage-menu-class-extender --activate
+#wp plugin install widget-css-classes --activate
+#wp plugin install disable-comments --activate
+#wp plugin install disable-comments --activate
+#wp plugin install disable-comments --activate
+#wp plugin install disable-comments --activate
 
 
 
