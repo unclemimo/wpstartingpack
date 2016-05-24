@@ -22,9 +22,9 @@
     "require": {
         "php": ">=5.4",
         "composer/installers": "*",
-        "johnpbloch/wordpress": "*",
+        "johnpbloch/wordpress": "*"
     },
     "extra": {
-    	"wordpress-install-dir": "wp",
+    	"wordpress-install-dir": "wp"
     }
 }
