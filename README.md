@@ -5,9 +5,9 @@ This script offer a modern workflow to manage Wordpress installation and setup v
 
 * Install and manage Wordpress with Composer.
 * Setup WP core in a custom directory (site up and running in http://localhost/yoursite).
-* Move wp-config to root.
+* Move wp-config.php from WP core  directory (https://wordpress.stackexchange.com/questions/58391/is-moving-wp-config-outside-the-web-root-really-beneficial).
 * Create DB in your local system (if it doesn't exist).
-* Custom wp-content directory, outside wp/ folder (the script does the needed modifications to wp-config.php file).
+* Custom wp-content directory, outside WP folder (the script does the needed modifications to wp-config.php file).
 * Installation and activation of your prefered plugins (a set of common plugins are predefined).
 * WP-SYNC plugin to manage your DB through differents enviroments.
 * Configure multi-enviroment through the setup (Comming soon).
