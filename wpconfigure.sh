@@ -1,18 +1,19 @@
 #!/bin/bash
-# Source: https://deliciousbrains.com/how-why-install-wordpress-core-subdirectory/
-
 # Composer script to run: composer config extra.wordpress-install-dir --unset ; composer config extra.wordpress-install-dir wordpressfolderpost ; composer install ; chmod +x wpconfigure.sh ; ./wpconfigure.sh
 # WP_SUBDIR=wordpressfold; composer config extra --unset;composer config extra.installer-paths.wp/wp-content/mu-plugins/{$name}/ --unset;composer config extra.installer-paths.wp/wp-content/plugins/{$name}/ --unset;composer config extra.installer-paths.wp/wp-content/themes/{$name}/ --unset ;composer config extra.wordpress-install-dir $WP_SUBDIR ;composer config extra.installer-paths.$WP_SUBDIR/wp-content/mu-plugins/{$name}/ ["type:wordpress-muplugin"];composer config extra.installer-paths.$WP_SUBDIR/wp-content/plugins/{$name}/ ["type:wordpress-plugin"];composer config extra.installer-paths.$WP_SUBDIR/wp-content/themes/{$name}/ ["type:wordpress-theme"];composer install;chmod +x wpconfigure.sh;./wpconfigure.sh
 
 
-# Installation:
+# Variables:
 
 
 RESET="\033[0m"
 BOLD="\033[1m"
 YELLOW="\033[38;5;11m"
-CURRENT_DIR=${PWD##*/} 
+CURRENT_DIR=${PWD##*/}
+green=`tput setaf 2`
+reset=`tput sgr0`
 
+# User prompt:
 
 read -p "$(echo -e $BOLD$YELLOW"Enter your desired wordpress core subdirectory (default: wp. Must be the same of the one selected in Composer as WP Subdirectory): "$RESET)" CORE_DIR
 CORE_DIR=${CORE_DIR:-wp}
@@ -98,7 +99,7 @@ fi
 chmod -v 755 $CORE_DIR/wp-content/*
 rsync -av $CORE_DIR/wp-content/* $WP_CONTENT_VAR/
 
-# Move wp-content in root to wp/wp-content
+# Move wp-content-composer in root to ./$WP_CONTENT_VAR
 if [  -d "wp-content-composer" ]; then
 rsync -av wp-content-composer/wp-content/* $WP_CONTENT_VAR/
 rm -rf wp-content-composer
@@ -145,4 +146,6 @@ fi
 
 
 
-printf "\033[0;32mInstallation finished\n";
+
+
+echo "${green}Installation finished!${reset}"
