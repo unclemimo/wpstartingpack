@@ -100,7 +100,7 @@ mv "$CORE_DIR/wp-config.php" ./wp-config.php
 
 # Install/activate plugins
 wp plugin install https://github.com/wp-sync-db/wp-sync-db/archive/master.zip --activate
-wp plugin install w3-total-cache --activate
+#wp plugin install w3-total-cache --activate
 #wp plugin install google-sitemap-generator --activate
 #wp plugin install themecheck --activate
 #wp plugin install better-wp-security --activate
@@ -120,9 +120,6 @@ wp plugin install w3-total-cache --activate
 #wp plugin install disable-comments --activate
 #wp plugin install majpage-menu-class-extender --activate
 #wp plugin install widget-css-classes --activate
-#wp plugin install disable-comments --activate
-#wp plugin install disable-comments --activate
-#wp plugin install disable-comments --activate
 #wp plugin install disable-comments --activate
 
 
