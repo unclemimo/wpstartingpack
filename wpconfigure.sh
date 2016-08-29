@@ -81,11 +81,11 @@ wp core install --url=$SITE_URL --title="$SITE_TITLE" --admin_user=$SITE_USER --
 cp "$CORE_DIR/index.php" ./index.php
 
 # Edit index.php to point to correct path of wp-blog-header.php
-sed -ie "s/'\/wp-blog-header.php/'\/wp\/wp-blog-header.php/g" index.php
+sed -ie "s/'\/wp-blog-header.php/'\/$CORE_DIR\/wp-blog-header.php/g" index.php
 rm index.phpe
 
 # Update the siteurl in the database with sub directory path
-wp option update siteurl $(wp option get siteurl)/$CORE_DIR --path=wp
+wp option update siteurl $(wp option get siteurl)/$CORE_DIR --path=$CORE_DIR
 
 # Move wp/wp-content to ./$WP_CONTENT_VAR
 
@@ -101,10 +101,12 @@ mv "$CORE_DIR/wp-config.php" ./wp-config.php
 # Install/activate plugins
 wp plugin install https://github.com/wp-sync-db/wp-sync-db/archive/master.zip --activate
 #wp plugin install w3-total-cache --activate
+#wp plugin install wordpress-seo --activate
+#wp plugin install amp --activate
+#wp plugin install glue-for-yoast-seo-amp --activate
 #wp plugin install google-sitemap-generator --activate
 #wp plugin install themecheck --activate
 #wp plugin install better-wp-security --activate
-#wp plugin install wordpress-seo --activate
 #wp plugin install shortcodes-ultimate --activate
 #wp plugin install wysija-newsletters --activate
 #wp plugin install contact-form-7 --activate
@@ -121,6 +123,10 @@ wp plugin install https://github.com/wp-sync-db/wp-sync-db/archive/master.zip --
 #wp plugin install majpage-menu-class-extender --activate
 #wp plugin install widget-css-classes --activate
 #wp plugin install disable-comments --activate
+#wp plugin install sendgrid-email-delivery-simplified --activate
+#wp plugin install really-simple-ssl --activate
+#wp plugin install wp-db-backup --activate
+# Install: composer require roots/wp-password-bcrypt
 
 
 # Verify if there are more files in wp/wp-content and move it to the new folder (./$WP_CONTENT_VAR)
@@ -132,10 +138,6 @@ if [  -d "$WP_CONTENT_VAR" ]; then
   rsync -av $CORE_DIR/wp-content/* $WP_CONTENT_VAR/
   rm -rf $CORE_DIR/wp-content
 fi
-
-
-
-
 
 
 echo "${green}Installation finished!${reset}"
