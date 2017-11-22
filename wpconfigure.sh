@@ -99,34 +99,12 @@ rsync -av $CORE_DIR/wp-content/* $WP_CONTENT_VAR/
 mv "$CORE_DIR/wp-config.php" ./wp-config.php
 
 # Install/activate plugins
+# For more plugins, check recommended_plugins.txt file
 wp plugin install https://github.com/wp-sync-db/wp-sync-db/archive/master.zip --activate
-#wp plugin install w3-total-cache --activate
-#wp plugin install wordpress-seo --activate
-#wp plugin install amp --activate
-#wp plugin install glue-for-yoast-seo-amp --activate
-#wp plugin install google-sitemap-generator --activate
-#wp plugin install themecheck --activate
-#wp plugin install better-wp-security --activate
-#wp plugin install shortcodes-ultimate --activate
-#wp plugin install wysija-newsletters --activate
-#wp plugin install contact-form-7 --activate
-#wp plugin install xcloner-backup-and-restore	 --activate
-#wp plugin install google-analytics-for-wordpress --activate
-#wp plugin install updraftplus --activate
-#wp plugin install advanced-custom-fields --activate
-#wp plugin install internet-explorer-alert --activate
-#wp plugin install disable-comments --activate
-#wp plugin install master-slider --activate
-#wp plugin install sweet-alert-add-on-for-contact-form-7 --activate
-#wp plugin install admin-bar-disabler --activate
-#wp plugin install disable-comments --activate
-#wp plugin install majpage-menu-class-extender --activate
-#wp plugin install widget-css-classes --activate
-#wp plugin install disable-comments --activate
-#wp plugin install sendgrid-email-delivery-simplified --activate
-#wp plugin install really-simple-ssl --activate
-#wp plugin install wp-db-backup --activate
-# Install: composer require roots/wp-password-bcrypt
+wp plugin install w3-total-cache
+wp plugin install better-wp-security
+wp plugin install updraftplus --activate
+wp plugin install admin-bar-disabler --activate
 
 
 # Verify if there are more files in wp/wp-content and move it to the new folder (./$WP_CONTENT_VAR)

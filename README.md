@@ -9,19 +9,23 @@ This script offer a modern workflow to manage Wordpress installation and setup v
 * Create DB in your local system (if it doesn't exist).
 * Custom wp-content directory, outside WP folder (the script does the needed modifications to wp-config.php file).
 * Installation and activation of your prefered plugins (a set of common plugins are predefined).
-* WP-SYNC plugin to manage your DB through differents enviroments.
-* Configure multi-enviroment through the setup (Comming soon).
-* Generate salt keys in all wp-config files (Coming soon).
-* Custom underscore Wordpress theme (Coming soon).
-* WP core as a GIT submodule (Coming soon).
+* WP-SYNC plugin installation, to manage your DB through differents enviroments.
+
+
+To do:
+* Configure multi-enviroment through the setup.
+* Generate salt keys in wp-config files.
+* Custom underscore Wordpress theme.
+* WP core as a GIT submodule.
+* Random generate WP admin username and password.
 
 In 5 minutes, you will have a fresh Wordpress installation, with a lot of security and performance tweaks, plugins and more.
 
 ## Whats the magic?
 
-It manages Wordpress installation with Composer. Set up is done with WP-CLI and BASH scripting. At the end, cames Grunt to edit and move some files/folders.
+It manages Wordpress installation with Composer. Set up is done with WP-CLI and BASH scripting.
 
-WP starting pack is an internal project of Atiasweb web design and developent company. It hasn't been developed from scratch, but by putting together many techinques and methods.
+WP starting pack is an internal project of <a href='atiasweb.com'>Atiasweb</a>a> web design and developent company. It hasn't been developed from scratch, but by putting together many techinques and methods.
 
 We want to make of it a maintainable and stable alternative for launching fresh and highly top-notch WP install. 
 
@@ -35,17 +39,17 @@ Before getting started, make sure you have installed, up and running:
 - Composer: https://getcomposer.org/.
 - WP CLI: https://wp-cli.org/
 - Node.js: https://nodejs.org/en/
-- Grunt: http://gruntjs.com/
 
-It has been tested on Mac. I realise that it should work on Linux as well.
+It has been tested on Mac. I realise that it should work on Linux systems as well.
 
 ## Getting started
 
 __1. In terminal, go to the project folder and type (as root, or using sudo):__
 
 ```bash
-# WP_SUBDIR=wp; composer install;
-# chmod +x wpconfigure.sh; wpconfigure.sh
+# composer install;
+# chmod +x wpconfigure.sh
+# ./wpconfigure.sh
 ```
 
 ## References

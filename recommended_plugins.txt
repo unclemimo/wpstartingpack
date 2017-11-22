@@ -1,0 +1,32 @@
+#!/bin/bash
+
+# Install/activate plugins
+wp plugin install https://github.com/wp-sync-db/wp-sync-db/archive/master.zip --activate
+wp plugin install w3-total-cache
+wp plugin install wordpress-seo
+wp plugin install google-sitemap-generator
+wp plugin install advanced-sitemap-generator
+wp plugin install better-wp-security
+wp plugin install shortcodes-ultimate --activate
+wp plugin install contact-form-7 --activate
+wp plugin install google-analytics-for-wordpress
+wp plugin install updraftplus --activate
+wp plugin install internet-explorer-alert --activate
+wp plugin install disable-comments --activate
+wp plugin install sweet-alert-add-on-for-contact-form-7 --activate
+wp plugin install admin-bar-disabler --activate
+wp plugin install majpage-menu-class-extender --activate
+wp plugin install widget-css-classes --activate
+wp plugin install sendgrid-email-delivery-simplified --activate
+wp plugin install really-simple-ssl
+wp plugin install wp-db-backup
+wp plugin install loco-translate
+wp plugin install coming-soon-maintenance-mode-from-acurax --activate
+wp plugin install master-slider --activate
+wp plugin install amp --activate
+wp plugin install glue-for-yoast-seo-amp --activate
+wp plugin install themecheck --activate
+wp plugin install shortcodes-ultimate --activate
+wp plugin install wysija-newsletters --activate
+wp plugin install xcloner-backup-and-restore	 --activate
+wp plugin install advanced-custom-fields --activate
