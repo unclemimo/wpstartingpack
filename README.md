@@ -13,6 +13,8 @@ This script offers a modern workflow to manage Wordpress installation and setup 
 
 In 5 minutes, you will have a fresh Wordpress installation, with a lot of security and performance tweaks, plugins and more.
 
+![alt text](https://media.giphy.com/media/xT0xesfMzr1lw06vsI/giphy.gif "WP Starting Pack")
+
 ## :alien: Where's the magic?
 
 It manages Wordpress installation with Composer. Set up is done with WP-CLI and BASH scripting.
