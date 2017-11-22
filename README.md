@@ -11,7 +11,7 @@ This script offers a modern workflow to manage Wordpress installation and setup 
 - [x] Installation and activation of your prefered plugins (a set of common plugins are predefined).
 - [x] WP-SYNC plugin installation, to manage your DB through differents enviroments.
 
-In 5 minutes, you will have a fresh Wordpress installation, with a lot of security and performance tweaks, plugins and more.
+In 2 minutes, you will have a fresh Wordpress installation, with a lot of security and performance tweaks, plugins and more.
 
 ![alt text](https://media.giphy.com/media/xT0xesfMzr1lw06vsI/giphy.gif "WP Starting Pack")
 
