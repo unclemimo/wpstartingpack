@@ -47,11 +47,11 @@ $ ./wpconfigure.sh
 
 ## :hand: To do:
 
-- [ ] Configure multi-enviroment through the setup.
+- [ ] Configure multi-enviroment through the setup (https://github.com/studio24/wordpress-multi-env-config) or similar.
 - [ ] Generate salt keys in wp-config files.
 - [ ] Custom underscore Wordpress theme.
 - [ ] WP core as a GIT submodule.
-- [ ] Random generate WP admin username and password.
+- [ ] Random generate a random WP password (and copy it to clipboard).
 - [ ] Handle Wordpress download and installation wit WP CLI instead of Composer.
 
 ## :interrobang: Reported issues
