@@ -52,6 +52,14 @@ __1. In terminal, go to the project folder and type (as root, or using sudo):__
 # ./wpconfigure.sh
 ```
 
+## Reported issues
+
+* "env: mysql: No such file or directory" error: https://stackoverflow.com/questions/44440064/env-mysql-no-such-file-or-directory-after-wp-import#44856936
+
+* MAMP or local server not running (yeah, this happens).
+
+* Error: Error establishing a database connection. This either means that the username and password information in your `wp-config.php` file is incorrect or we can’t contact the database server at `localhost`: https://make.wordpress.org/cli/handbook/installing/#using-a-custom-php-binary and https://github.com/wp-cli/wp-cli/issues/2662
+
 ## References
 
 1. https://github.com/micahblu/wp-launchpad
