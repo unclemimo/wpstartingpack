@@ -17,7 +17,7 @@ In 5 minutes, you will have a fresh Wordpress installation, with a lot of securi
 
 It manages Wordpress installation with Composer. Set up is done with WP-CLI and BASH scripting.
 
-WP starting pack is an internal project of <a href='atiasweb.com'>Atiasweb</a>a> web design and developent company. It hasn't been developed from scratch, but by putting together many techinques and methods.
+WP starting pack is an internal project of [Atias Web](https://atiasweb.com/), a web design and developent company. It hasn't been developed from scratch, but by putting together many techinques and methods.
 
 We want to make of it a maintainable and stable alternative for launching fresh and highly top-notch WP install. 
 
