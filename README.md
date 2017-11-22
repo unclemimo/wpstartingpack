@@ -47,7 +47,7 @@ $ ./wpconfigure.sh
 
 ## :hand: To do:
 
-- [ ] Configure multi-enviroment through the setup (https://github.com/studio24/wordpress-multi-env-config) or similar.
+- [ ] Configure multi-enviroment through the command prompt setup (https://github.com/studio24/wordpress-multi-env-config or similar).
 - [ ] Generate salt keys in wp-config files.
 - [ ] Custom underscore Wordpress theme.
 - [ ] WP core as a GIT submodule.
