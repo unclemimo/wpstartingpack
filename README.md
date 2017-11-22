@@ -38,9 +38,9 @@ It has been tested on Mac OS. It should works on Linux systems as well.
 __1. In terminal, go to the project folder and type (as root, or using sudo):__
 
 ```bash
-# composer install;
-# chmod +x wpconfigure.sh
-# ./wpconfigure.sh
+$ composer install
+$ chmod +x wpconfigure.sh
+$ ./wpconfigure.sh
 ```
 
 ## :hand: To do:
@@ -56,7 +56,7 @@ __1. In terminal, go to the project folder and type (as root, or using sudo):__
 
 > "env: mysql: No such file or directory" error: https://stackoverflow.com/questions/44440064/env-mysql-no-such-file-or-directory-after-wp-import#44856936
 
-> MAMP or local server not running (yeah, this happens).
+> "Unable to connect to MySQL server": MAMP or local server not running (yeah, this happens) :sweat_smile:.
 
 > Error: Error establishing a database connection. This either means that the username and password information in your `wp-config.php` file is incorrect or we can’t contact the database server at `localhost`: https://make.wordpress.org/cli/handbook/installing/#using-a-custom-php-binary and https://github.com/wp-cli/wp-cli/issues/2662
 
