@@ -52,7 +52,7 @@ $ ./wpconfigure.sh
 - [ ] Custom underscore Wordpress theme.
 - [ ] WP core as a GIT submodule.
 - [ ] Random generate a random WP password (and copy it to clipboard).
-- [ ] Handle Wordpress download and installation wit WP CLI instead of Composer.
+- [ ] Handle Wordpress download and installation with WP CLI instead of Composer.
 
 ## :interrobang: Reported issues
 
